@@ -34,7 +34,6 @@ spring:
         min-idle: 50     #连接池最少空闲连接数
         max-wait: -1     #连接池最长阻塞时间，-1代表没有限制
     timeout: 3000        #连接超时时间(单位:毫秒)
-    password: 1p2p34p
 
   #配置 邮箱参数
   mail:
