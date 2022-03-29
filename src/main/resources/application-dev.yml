@@ -1,0 +1,77 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/managersystem?charset=utf8mb4&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+      username: root
+      password: U+H4vqItFgTHJiY9gpeW2PUaeaSzhmZ0poIm2i80O/vqsUGc+1DPmfN28+At7sI5PQLRwEohgdsl3Cqc5XNDvQ==
+      initial-size: 10
+      max-active: 20
+      max-wait: 60000
+      min-idle: 10
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      test-while-idle: true
+      test-on-borrow: true
+      test-on-return:  false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      validation-query: SELECT 1
+      validation-query-timeout: 500
+      filters: stat,wall,config
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKo5t380xtiTX9VlQEpFbTI5ZtJCCJJ6EK34EzATS26NEYsZC8T6JEn6Q4R10PoIYeDfvTXMR941ZXujpt/ABv8CAwEAAQ==
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 200  #连接池最大活动连接数
+        max-idle: 100    #连接池最大空闲连接数
+        min-idle: 50     #连接池最少空闲连接数
+        max-wait: -1     #连接池最长阻塞时间，-1代表没有限制
+    timeout: 3000        #连接超时时间(单位:毫秒)
+
+  #配置 邮箱参数
+  mail:
+    host: smtp.sina.com							#smtp邮箱服务器
+    password: 60f079a3270e4c74        #smtp邮箱服务器授权密码
+    username: yangjh_996@sina.com   #你的邮箱账号 （作为系统账号 进行发送）
+    port: 25													#端口号
+    protocol: smtp										#协议类型
+    default-encoding: utf-8						#默认字符编码集
+
+#配置mybatis
+mybatis:
+  configuration:
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true  #开启数据库字段和属性名的自动转换
+
+#  访问系统的地址
+server:
+  servlet:
+    context-path: /manager
+  port: 8090
+
+#rocketmq配置
+rocketmq:
+  name-server: 127.0.0.1:9876
+  # 生产者配置
+  producer:
+    isOnOff: on
+    # 发送同一类消息的设置为同一个group，保证唯一
+    group: rocketmq-group-delivery-status
+    groupName: rocketmq-group-delivery
+    groupNameCom: rocketmq-group-companyAccess
+    # 服务地址
+    namesrvAddr: 127.0.0.1:9876
+    # 消息最大长度 默认1024*4(4M)
+    maxMessageSize: 4096
+    # 发送消息超时时间,默认3000
+    sendMsgTimeout: 3000
+    # 发送消息失败重试次数，默认2
+    retryTimesWhenSendFailed: 2
