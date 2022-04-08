@@ -56,7 +56,7 @@ server:
   servlet:
     context-path: /manager
   port: 8090
-  max-http-header-size: 8KB
+  max-http-header-size: 8192
 
 #rocketmq配置
 rocketmq:
