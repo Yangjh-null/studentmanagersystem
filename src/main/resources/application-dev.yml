@@ -7,7 +7,7 @@ spring:
     druid:
       url: jdbc:mysql://localhost:3306/managersystem?charset=utf8mb4&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
       username: root
-      password: U+H4vqItFgTHJiY9gpeW2PUaeaSzhmZ0poIm2i80O/vqsUGc+1DPmfN28+At7sI5PQLRwEohgdsl3Cqc5XNDvQ==
+      password: oZqGGEPWl2y7ffPJw0cL58Y5/9uxE57q0vyIjfgV1hxwSrvsNDI21CkJsAJA1onCZ9d2MqGo3CKM/4Nzgw/HTA==
       initial-size: 10
       max-active: 20
       max-wait: 60000
@@ -22,7 +22,7 @@ spring:
       validation-query: SELECT 1
       validation-query-timeout: 500
       filters: stat,wall,config
-      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKo5t380xtiTX9VlQEpFbTI5ZtJCCJJ6EK34EzATS26NEYsZC8T6JEn6Q4R10PoIYeDfvTXMR941ZXujpt/ABv8CAwEAAQ==
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMJKCY6SShPMV6ex4cKePrXK+yqXb0LCaHZxogqbXZlLhfEQnSddZiAjIYM4Ucs67dY5Y/mTNRrzeYVHqMS2FusCAwEAAQ==
   #redis配置
   redis:
     host: 127.0.0.1
