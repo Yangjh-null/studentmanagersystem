@@ -1,0 +1,19 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title th:text="${pos_name}"></title>
+</head>
+<body>
+    尊敬的<strong th:text="${stu_name}"></strong>,您好：
+    <br/>
+    <p th:text="${text}"></p>
+    <br/>
+  <hr/>
+    公司名称：<h3 th:text="${com_name}"></h3><br>
+    联系电话：<h3  th:text="${com_phone}"></h3><br>
+    如有任何疑问请联系电话！<br/>
+</body>
+</html>
